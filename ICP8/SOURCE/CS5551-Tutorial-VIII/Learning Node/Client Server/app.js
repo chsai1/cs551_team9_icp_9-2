@@ -1,4 +1,4 @@
-e strict';
+e strict;
 
 // Declare app level module which depends on views, and components
 function TextToSpeechConverter()
