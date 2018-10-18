@@ -1,132 +1,160 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="app.css">
+    <title>Nutrition App</title>
+    <!-- for icon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <style>
-
-        .menu input{
-      width: 300px;
-      background: transparent;
-      border: 2px solid #1ab188;
-      border-radius: 4px;
-      color: #5e5e5e;
-      font-family: 'Exo', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      padding: 6px;
-      margin-top: 10px;
-    }
-    .menu button{
-        width: 419px;
-        height:40px;
-        background:#1ab188;
-        border:  2px solid #ffffff;
-        cursor: pointer;
-        border-radius: 4px;
-        color: #ffffff;
-        font-family: 'Exo', sans-serif;
-        font-size: 16px;
-        font-weight: 600;
-        padding: 6px;
-        margin-top: 10px;
-    }
-        table {
-            max-width: 960px;
-            margin: 10px auto;
-            border: 1px solid #FFF;
-        }
-
-        caption {
-            font-size: 1.6em;
-            font-weight: 400;
-            padding: 10px 0;
-        }
-
-        thead th {
-            font-weight: 400;
-            background: #8a97a0;
-            color: #FFF;
-        }
-
-        tr {
-            background: #f4f7f8;
-            border: 1px solid #FFF;
-            margin-bottom: 5px;
-        }
-
-        tr:nth-child(even) {
-            background: #e8eeef;
-        }
-
-        th, td {
-            text-align: left;
-            padding: 20px;
-            font-weight: 300;
-        }
-
-        tfoot tr {
-            background: none;
-        }
-
-        tfoot td {
-            padding: 10px 2px;
-            font-size: 0.8em;
-            font-style: italic;
-            color: #8a97a0;
-        }
-  </style>
+    <!-- for header -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>
+    <link href="stylesheet/style.css" rel="stylesheet" id="my-css">
 
 </head>
-<body class="body">
-
-
-  <div  ng-controller="View1Ctrl" style="top: 200px">
-    <div class="menu" id="div_SearchContainer">
-    <h1 align="absolute" style="text-align: center; color: #1ab188">Search your place of interest!</h1>
-    <input type="text" id="txt_placeName" placeholder="Enter the place you want to search for" style="margin-left: 100px"/>
-    <input type="text" id="txt_searchFilter" placeholder="Enter the search query"/>
-    <button id="btn_getReview" ng-click="getVenues()">Get Venues</button>
+<br/>
+<body >
+<div ng-app="NutritionApp" ng-controller="NutritionController" >
+    <div class="container" align="center">
+        <div class="jumbotron" align="center">
+            <div class="page-header" style="border-bottom-color: #5cb49e">
+                <div class="nutritionModule" style="border-radius: 20px">
+                    <br/>
+                    <h1 style="color:white; font-family: 'Times New Roman'"> Nutrition Calculator </h1>
+                    Always anything for you..
+                </div>
+            </div>
+            <div class="btn-group btn-group-justified">
+                <div class="btn-group">
+                    <p class="sizechanger">
+                        <button class="btn btn-warning fa fa-home" style="font-size: 20px; border-radius: 20px" onclick="Home()">
+                            Home
+                        </button>
+                    </p>
+                </div>
+                <div class="btn-group">
+                    <p class="sizechanger">
+                        <button class="btn btn-warning fa fa-cutlery" style="font-size: 20px; border-radius: 20px" onclick="NutritionProviderFunc()">
+                            Nutrition Provider
+                        </button>
+                    </p>
+                </div>
+                <div class="btn-group">
+                    <p class="sizechanger">
+                        <button class="btn btn-warning fa fa-microphone" style="font-size: 20px; border-radius: 20px" onclick="TextToSpeechConverter()" >
+                            Text to speech
+                        </button>
+                    </p>
+                </div>
+                <div class="btn-group">
+                    <p class="sizechanger">
+                        <button class="btn btn-warning fa fa-envelope" style="font-size: 20px; border-radius: 20px" onclick="Contact()">
+                            Contact
+                        </button>
+                    </p>
+                </div>
+                <div class="btn-group">
+                    <p class="sizechanger">
+                        <button class="btn btn-warning fa fa-sign-in" style="font-size: 20px; border-radius: 20px" onclick="Login()" >
+                            Login
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="div_VenueList">
-      <h2 style="text-align: center; color: #1ab188"> Top Five Picks From FourSquare Review API </h2>
-      <ul>
-       <li ng-repeat="venue in venueList" style="font-size: x-large; color: #5e5e5e; text-align: center; list-style: none; list-style-position:inside;">
-          <a  href="" ng-click="getReviews(venue)" style="font-size: x-large; color: #5e5e5e; text-align: center;">{{venue.name}}</a>
-        </li>
-      </ul>
 
+    <div id="Display" class="container colourchanger">
+        <p>
+            Welcome to the Nutrition Converter
+        </p>
     </div>
-    <div id="div_ReviewList" style="display:none;"  >
+    <br/>
+    <div class="container backgrnd" style="border-radius: 20px">
+        <br/>
+        <input type="text" ng-model="dish" class="search-query form-control">
+        <br/>
+        <div style="alignment: center; background-position: center">
+            <button class="btn btn-Primary " ng-click="getNutritionApp()" >Search Item</button>
+            <div ng-controller="SpeechController">
+                <br/>
+                <button class="btn btn-primary fa fa-play" ng-click="getspeechtotext()" ></button>
+            </div>
+        </div>
+        <br>
+    </div>
+    <br/>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <b style="alignment: center; border-radius: 20px">
+            <div class="row container backgrond" ng-repeat="Nutrition in Nutritions" align="center" style="border-radius: 20px" >
+                <table align="centerS">
+                    <tr>
+                        <th>Item names:</th>
+                        <th>{{Nutrition.fields.item_name}}</th>
+                    </tr>
+                    <tr>
+                        <th> Calories: </th>
+                        <th>{{Nutrition.fields.nf_calories}} cals</th>
+                    </tr>
+                    <tr>
+                        <th>Protein:</th>
+                        <th>{{Nutrition.fields.nf_protein}}</th>
+                    </tr>
+                    <tr>
+                        <th>cholesterol:</th>
+                        <th>{{Nutrition.fields.nf_cholesterol}}</th>
+                    </tr>
+                    <tr>
+                        <th>Weight:</th>
+                        <th>{{Nutrition.fields.nf_serving_weight_grams}} gms</th>
+                    </tr>
+                    <tr>
+                        <th>Total Fat:</th>
+                        <th>{{Nutrition.fields.nf_total_fat}}</th>
+                    </tr>
+                </table>
+            </div>
+        </b></div>
+    <div class="col-sm-4"></div>
+</div>
+<br/>
+<br/>
+<div class="row">
+    <div class="col-sm-6">
+        <br/>
+        <p class="phone-info" style="color: white">Call us: <a href="#" style="color: white">(041)234-4523</a></p>
+    </div>
+    <div class="col-sm-6">
+        <br/>
+        <div style="left: 0px" class="social-icons">
+            <div class="col-sm-" style="text-align: right">
+                <a style="color: white" href="#" class="fa fa-facebook"></a>
+                <a class="fa fa-"></a>
+                <a style="color: white" href="#" class="fa fa-instagram"></a>
+                <a class="fa fa-"></a>
+                <a style="color: white" href="#" class="fa fa-twitter"></a>
+                <a class="fa fa-"></a>
+                <a style="color: white" href="#" class="fa fa-sign-out"></a>
+                <a class="fa fa-"></a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="Java%20Script/scirpted.js"></script>
 
 
-          <p ng-model="ReviewWithSentiment">
-
-            <TABLE BORDER=2 CELLPADDING=4 ng-show="showt"> <TR> <TH style="color: aliceblue; background:#1ab188" COLSPAN=2>Sentiment Analysis From Using Alchemy API </TH> </TR>
-                <TR> <TD>Most recent review</TD> <TD>{{ReviewWithSentiment.reviewText}}</TD> </TR>
-                <TR> <TD>Sentiment of the review</TD> <TD>{{ReviewWithSentiment.sentiment}}</TD> </TR>
-                <TR> <TD>Sentiment Score of the review</TD> <TD>{{ReviewWithSentiment.score}}</TD> </TR>
-                <TR> <TH style="color: aliceblue; background:#1ab188" COLSPAN=2 BGCOLOR="#445553">{{ReviewWithSentiment.reviewText}}</TH> </TR>
-            </TABLE>
-            <span ng-show="shows" style="text-align: center;">{{noText}}</span>
-          </p>
-	</div>
-  </div>
-
-
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
-  <script src="app.js"></script>
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="num.js"></script>
 
 
 </body>
